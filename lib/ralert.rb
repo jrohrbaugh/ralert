@@ -107,7 +107,7 @@ class Ralert
       title += c
     end
     
-    description = link.search('.st').inner_html
+    description = item.search('.st').inner_html
     description = ActionView::Base.full_sanitizer.sanitize(description)
       
 
