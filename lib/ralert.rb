@@ -106,11 +106,16 @@ class Ralert
     link.children.each do |c|
       title += c
     end
+    
+    description = link.search('.st').inner_html
+    description = ActionView::Base.full_sanitizer.sanitize(description)
+      
 
     result_node.title  = title
     result_node.source = meta.split('-')[0]
     result_node.date = meta.split('-')[1]
     result_node.link = link['href'].gsub!(/\/url\?q\=/, '').gsub!(/\&sa\=.*/,'')
+    result_node.description = description
 
     return result_node
   end
