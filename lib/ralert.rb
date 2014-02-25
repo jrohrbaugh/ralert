@@ -84,7 +84,7 @@ class Ralert
       cur_results << node_from_item(item)
     end
     
-    update_next_page unless next_page_missing
+    # update_next_page unless next_page_missing
     @results += cur_results
     
     return cur_results
