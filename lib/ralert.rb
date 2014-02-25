@@ -84,7 +84,7 @@ class Ralert
       cur_results << node_from_item(item)
     end
     
-    # update_next_page unless next_page_missing
+    update_next_page unless next_page_missing
     @results += cur_results
     
     return cur_results
@@ -125,7 +125,8 @@ class Ralert
   # available.
   #
   def next_page_missing
-    return @page.at_css("table#nav tr td.b:last-child").at_css("a").nil?
+    # return @page.at_css("table#nav tr td.b:last-child").at_css("a").nil?
+    return true
   end
   
   ##
