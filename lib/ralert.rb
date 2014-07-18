@@ -55,8 +55,10 @@ class Ralert
       query += "&safe=off"
     end
 
-    query += "&tbm=#{options.mode}"
-
+    if options.mode == "nws"
+      query += "&tbm=nws"
+    end
+  
     return base_uri + query
   end
 
